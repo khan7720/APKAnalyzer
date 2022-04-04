@@ -62,7 +62,6 @@ public class UploadServlet extends HttpServlet {
                             System.out.println(name + "=" + value);
                         }else{
                             String filename = item.getName();
-                            System.out.println(filename);
                             fileName = filename;
                             if(filename==null || filename.trim().equals("")){
                                 continue;

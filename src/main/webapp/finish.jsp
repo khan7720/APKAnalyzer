@@ -49,7 +49,7 @@
                   <br/>
                   <br/>
                   		<a href="/TestProject/DownloadServlet?filename=${filename}"><input id="button" type="submit" value="下载报告" class="btn btn-lg btn-default"></a>
-   						<input id="button" type="submit" value="查看结果" class="btn btn-lg btn-default" onclick="window.open('nh5.html')">
+   						<a href="/TestProject/ReportGenerateServlet?filename=${filename}&currentID=${currentID}"><input id="button" type="submit" value="查看结果" class="btn btn-lg btn-default"></a>
 
             </div>
 

@@ -1,0 +1,12 @@
+Analyse:  !N<D:\BISHE\newWorkSpace\TestProject\src\main\webapp\WEB-INF\upload\FieldSensitivity1.apk>N!  !!!!!!!!!!
+Analyse:  !P<D:\BISHE\newWorkSpace\TestProject\src\main\webapp\WEB-INF\upload\FieldSensitivity1.apk>P!  !!!!!!!!!!
+Permission 1!Per<android.permission.SEND_SMS>Per!  !!!!!!!!!!
+Permission 2!Per<android.permission.READ_PHONE_STATE>Per!  !!!!!!!!!!
+Totally analysis:11 Classes£¬80 Methods£¬56 Statements
+Apk Size is  !K<179>K! KB
+code size is  !S<128>S! lines
+CFG construction has run for !C<1.8313532>C! seconds
+Fastdroid analysis has run for !R<0.046999899>R! seconds
+TaintFlow totally Number is  !T<0>T!
+MayTaintFlow totally Number is  !M<0>M!
+--------------------------FINISH--------------------------------------

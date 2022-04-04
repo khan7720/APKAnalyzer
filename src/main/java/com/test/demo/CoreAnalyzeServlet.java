@@ -40,7 +40,7 @@ public class CoreAnalyzeServlet extends HttpServlet {
         String s2 = "cmd /c start java -jar D:\\BISHE\\newWorkSpace\\TestProject\\src\\main\\webapp\\core\\soot-infoflow-cmd-2.9.0-jar-with-dependencies.jar -a D:\\BISHE\\newWorkSpace\\TestProject\\src\\main\\webapp\\core\\Button1.apk -p D:\\BISHE\\newWorkSpace\\TestProject\\src\\main\\webapp\\core\\android-platforms -s D:\\BISHE\\newWorkSpace\\TestProject\\src\\main\\webapp\\core\\SourcesAndSinks.txt -o D:\\BISHE\\newWorkSpace\\TestProject\\src\\main\\webapp\\output\\toolResults\\flout.xml";
 
         String toolFlow = "java -jar D:\\BISHE\\newWorkSpace\\TestProject\\src\\main\\webapp\\core\\soot-infoflow-cmd-2.9.0-jar-with-dependencies.jar";
-        String toolFast = "java -jar D:\\BISHE\\newWorkSpace\\TestProject\\src\\main\\webapp\\core\\xd-fastdroid-jar-with-dependencies.jar -Ftw D:\\BISHE\\newWorkSpace\\TestProject\\src\\main\\webapp\\core\\EasyTaintWrapperSource.txt -Fo D:\\BISHE\\newWorkSpace\\TestProject\\src\\main\\webapp\\WEB-INF\\output\\";
+        String toolFast = "java -jar D:\\BISHE\\newWorkSpace\\TestProject\\src\\main\\webapp\\core\\xd-fastdroid-jar-with-dependencies.jar -Ftw D:\\BISHE\\newWorkSpace\\TestProject\\src\\main\\webapp\\core\\EasyTaintWrapperSource.txt -Fo D:\\BISHE\\newWorkSpace\\TestProject\\src\\main\\webapp\\output\\toolResults\\";
         String FastMiddle = " -Ffs -p D:\\BISHE\\newWorkSpace\\TestProject\\src\\main\\webapp\\core\\android-platforms -s D:\\BISHE\\newWorkSpace\\TestProject\\src\\main\\webapp\\core\\SourcesAndSinks.txt -a D:\\BISHE\\newWorkSpace\\TestProject\\src\\main\\webapp\\WEB-INF\\upload\\";
         
         //String 
@@ -50,8 +50,6 @@ public class CoreAnalyzeServlet extends HttpServlet {
         cmd.append(toolFast);
         String[] nameSplit = filename.split("[.]");
         
-        System.out.println(nameSplit[0]);
-        System.out.println(nameSplit[1]);
         
         cmd.append(nameSplit[0]);
         cmd.append(FastMiddle);
@@ -74,6 +72,13 @@ public class CoreAnalyzeServlet extends HttpServlet {
         }
         
         
+        apkBean currentAPK = ResultExtractor.extractFile(nameSplit[0]);
+        System.out.println(currentAPK.toString());
+        MyDAO md = new MyDAO();
+        System.out.println(md.insert_single_apk(currentAPK)); 
+        
+        
+        
         
 
 //	        process = Runtime.getRuntime().exec(s2);
@@ -81,7 +86,7 @@ public class CoreAnalyzeServlet extends HttpServlet {
 //	        int value = process.exitValue();
 //	        System.out.println(value);
 
-   
+        request.setAttribute("currentID", currentAPK.getApkID());
 	    request.setAttribute("message",message);
 	    request.setAttribute("filename",filename);
 		request.getRequestDispatcher("/finish.jsp").forward(request, response);

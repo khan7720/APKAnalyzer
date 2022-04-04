@@ -28,4 +28,10 @@
     <servlet-class>com.test.demo.DownloadServlet</servlet-class>
   </servlet>
   
+   <servlet>
+    <display-name>ReportGenerateServlet</display-name>
+    <servlet-name>ReportGenerateServlet</servlet-name>
+    <servlet-class>com.test.demo.ReportGenerateServlet</servlet-class>
+  </servlet>
+  
 </web-app>
