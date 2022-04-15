@@ -34,4 +34,15 @@
     <servlet-class>com.test.demo.ReportGenerateServlet</servlet-class>
   </servlet>
   
+    <servlet>
+    <display-name>SummaryGenerateServlet</display-name>
+    <servlet-name>SummaryGenerateServlet</servlet-name>
+    <servlet-class>com.test.demo.SummaryGenerateServlet</servlet-class>
+  </servlet>
+
+      <servlet>
+    <display-name>FunctionServlet</display-name>
+    <servlet-name>FunctionServlet</servlet-name>
+    <servlet-class>com.test.demo.FunctionServlet</servlet-class>
+  </servlet>
 </web-app>

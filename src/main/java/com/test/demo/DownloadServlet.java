@@ -29,15 +29,27 @@ public class DownloadServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String filename = request.getParameter("filename");
+		String fullname = request.getParameter("filename");
+		String currentID = request.getParameter("currentID");
+		String realName = fullname.substring(0,fullname.length()-4);
+		String filename = realName;
 		System.out.println(filename);
+		String pdfname = filename+"ID-"+currentID+".pdf";
+		
+		
+		String htmlname = htmlUnitTest.generateHTML(fullname,currentID);
+		
+		String toPdfDest = "D:\\BISHE\\newWorkSpace\\TestProject\\src\\main\\webapp\\output\\pdf\\"+pdfname;
+		
+		HTMLtoPDF.convert(htmlname, toPdfDest);
+				
 		
 		//String path = this.getServletContext().getRealPath("D:\\BISHE\\newWorkSpace\\TestProject\\src\\main\\webapp\\output\\pdf\\"+filename);
-		String path = "D:\\BISHE\\newWorkSpace\\TestProject\\src\\main\\webapp\\output\\pdf\\"+filename;
+		String path = "D:\\BISHE\\newWorkSpace\\TestProject\\src\\main\\webapp\\output\\pdf\\"+pdfname;
 				
-		response.setHeader("Content-Disposition", "attachment;filename="+filename);
+		response.setHeader("Content-Disposition", "attachment;filename="+pdfname);
 		
-		String mimeType = this.getServletContext().getMimeType(filename);
+		String mimeType = this.getServletContext().getMimeType(pdfname);
 		response.setContentType(mimeType);
 		
 		

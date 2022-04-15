@@ -34,7 +34,7 @@
                     <nav>
                         <ul class="nav masthead-nav">
                             <li><a href="index.jsp">主页</a></li>
-                            <li><a href="function.jsp">功能</a></li>
+                            <li><a href="/TestProject/FunctionServlet">功能</a></li>
                             <li class="active"><a href="about.jsp">关于</a></li>
                         </ul>
                     </nav>
@@ -42,10 +42,23 @@
             </div>
 
             <div class="inner cover">
-                <h1 class="cover-heading">Android在线分析工具</h1>
-                <p class="lead">即刻使用基于静态污点分析技术开发的FlowDroid、FastDroid工具对Android应用进行分析，获取可能潜藏的敏感行为、敏感权限并生成多维度的分析报告</p>
-                <h5 class="cover-heading">关于页面</h5>
-                  
+                <h3 class="cover-heading">项目开发信息   <span class="label label-primary">Info</span></h3>
+                 <br>
+                 <br>
+                 <br>
+                <ul class="list-group">
+				  <li class="list-group-item list-group-item-info">后台开发语言: Java</li>
+				  <li class="list-group-item list-group-item-info">IDE: Eclipse </li>
+				  <li class="list-group-item list-group-item-info">数据库: MySQL 5.7  </li>
+				  <li class="list-group-item list-group-item-info">服务器: apache tomcat 8.5</li>
+				  <li class="list-group-item list-group-item-info">数据可视化工具: echarts</li>
+				  <li class="list-group-item list-group-item-info"><a href="https://developer.android.google.cn/reference/android/Manifest.permission" style='color:green'>权限相关信息来源：Android官方文档</a></li>
+				</ul>
+                 <br>
+                 <br>
+                 <br>
+                 <br>
+                 <br> 
             </div>
 
             <div class="mastfoot">

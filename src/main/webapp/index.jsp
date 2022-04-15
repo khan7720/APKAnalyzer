@@ -17,7 +17,8 @@
 
     <!-- Custom styles for this template -->
      <link href="./css/IndexStyle.css" rel="stylesheet">
-
+     
+    
 </head>
 
 <body>
@@ -34,27 +35,34 @@
                     <nav>
                         <ul class="nav masthead-nav">
                             <li class="active"><a href="index.jsp">主页</a></li>
-                            <li><a href="function.jsp">功能</a></li>
+                            <li><a href="/TestProject/FunctionServlet">功能</a></li>
                             <li><a href="about.jsp">关于</a></li>
                         </ul>
                     </nav>
                 </div>
             </div>
 
-            <div class="inner cover">
+            <div id="whole" class="inner cover">
                 <h1 class="cover-heading">Android在线分析工具</h1>
                 <p class="lead">即刻使用基于静态污点分析技术开发的FlowDroid、FastDroid工具对Android应用进行分析，获取可能潜藏的敏感行为、敏感权限并生成多维度的分析报告</p>
                   <form enctype="multipart/form-data" method="post" action="/TestProject/UploadServlet">
 						<input type="file" name="myfile" class="masthead-brand">
 					    <input type="submit" value="上传APK文件" class="btn btn-lg btn-default">	
 					</form>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
             </div>
 
-            <div class="mastfoot">
+            <div id="foot" class="mastfoot">
                 <div class="inner">
                     <p>Powered by XDU</p>
                 </div>
             </div>
+            
+            
 
         </div>
 

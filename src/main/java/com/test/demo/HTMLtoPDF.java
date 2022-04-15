@@ -4,7 +4,7 @@ import java.io.File;
 
 public class HTMLtoPDF {
 	
-	private static final String toPdfTool = "D:\\BISHE\\wkhtmltopdf\\bin\\wkhtmltopdf.exe";
+	private static final String toPdfTool = "D:\\BISHE\\newWorkSpace\\TestProject\\src\\main\\webapp\\core\\wkhtmltopdf\\bin\\wkhtmltopdf";
 	
 	public static boolean convert(String srcPath, String destPath){
         File file = new File(destPath);
@@ -29,16 +29,15 @@ public class HTMLtoPDF {
 //            error.start();
 //            output.start();
             proc.waitFor();
+            System.out.println("pdf创建成功");
         }catch(Exception e){
             result = false;
             e.printStackTrace();
+            System.out.println("pdf创建失败");
         }
         
         return result;
     }
 	
-	public static void main(String[] args) {
-        HTMLtoPDF.convert("D:\\BISHE\\newWorkSpace\\TestProject\\src\\main\\webapp\\nh5.html", "D:\\BISHE\\newWorkSpace\\TestProject\\src\\main\\webapp\\output\\pdf\\test.pdf");
-    }
 
 }

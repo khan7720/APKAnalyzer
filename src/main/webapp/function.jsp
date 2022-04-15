@@ -17,6 +17,7 @@
 
     <!-- Custom styles for this template -->
      <link href="./css/IndexStyle.css" rel="stylesheet">
+  
 
 </head>
 
@@ -34,20 +35,52 @@
                     <nav>
                         <ul class="nav masthead-nav">
                             <li><a href="index.jsp">主页</a></li>
-                            <li class="active"><a href="function.jsp">功能</a></li>
+                            <li class="active"><a href="/TestProject/FunctionServlet">功能</a></li>
                             <li><a href="about.jsp">关于</a></li>
                         </ul>
                     </nav>
                 </div>
             </div>
-
-            <div class="inner cover">
-                <h1 class="cover-heading">Android在线分析工具</h1>
-                <p class="lead">即刻使用基于静态污点分析技术开发的FlowDroid、FastDroid工具对Android应用进行分析，获取可能潜藏的敏感行为、敏感权限并生成多维度的分析报告</p>
-                <h5 class="cover-heading">功能页面</h5>
+			
+			
+			
+            <div id="whole" class="inner cover" style="display:block">
+                <br>
+	    		<br>
+	    		<br>
+	    		<br>
+	    		<br>
+                <h3 class="cover-heading">平台最近分析记录   <span class="label label-success">New</span></h3>
+                <h4 class="cover-heading">（点击可查看分析结果）</h4>
+                <br>
+	    		<br>
+	    		<br>
+           <div class="list-group">
+			  <a href="/TestProject/ReportGenerateServlet?filename=${a1name}&currentID=${a1id}"><button type="button" class="list-group-item">应用名称：${a1name}--------------分析时间： ${a1time}</button></a>
+			  <a href="/TestProject/ReportGenerateServlet?filename=${a2name}&currentID=${a2id}"><button type="button" class="list-group-item">应用名称：${a2name}--------------分析时间： ${a2time}</button></a>
+			  <a href="/TestProject/ReportGenerateServlet?filename=${a3name}&currentID=${a3id}"><button type="button" class="list-group-item">应用名称：${a3name}--------------分析时间： ${a3time}</button></a>
+			  <a href="/TestProject/ReportGenerateServlet?filename=${a4name}&currentID=${a4id}"><button type="button" class="list-group-item">应用名称：${a4name}--------------分析时间： ${a4time}</button></a>
+			  <a href="/TestProject/ReportGenerateServlet?filename=${a5name}&currentID=${a5id}"><button type="button" class="list-group-item">应用名称：${a5name}--------------分析时间： ${a5time}</button></a>
+			</div>                                                    
+	    		<br>
+	    		<br>
+	    		<br>
+	    		<br>
+	    		<br>             
+                <a href="/TestProject/SummaryGenerateServlet"><input type="submit" value="历史数据" class="btn btn-lg btn-default"></a>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
             </div>
+            
+             
 
-            <div class="mastfoot">
+
+            <div id="foot" class="mastfoot">
                 <div class="inner">
                     <p>Powered by XDU</p>
                 </div>

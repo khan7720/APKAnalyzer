@@ -38,6 +38,7 @@ public class UploadServlet extends HttpServlet {
                 }
                 String message = "未选择文件，上传失败！";
                 String fileName = "";
+                String formatError = "";
                 try{
                     //使用Apache文件上传组件处理文件上传步骤：
                     //1、创建一个DiskFileItemFactory工厂
@@ -66,6 +67,15 @@ public class UploadServlet extends HttpServlet {
                             if(filename==null || filename.trim().equals("")){
                                 continue;
                             }
+                            
+                            
+                            String type = fileName.substring(fileName.length()-3,fileName.length());
+                            if(!(type.equals("apk")||type.equals("APK"))) {
+                            	formatError = "文件格式有误！";
+                            	throw new Exception();
+                            }
+                            
+                            
                             filename = filename.substring(filename.lastIndexOf("\\")+1);
                             //获取item中的上传文件的输入流
                             InputStream in = item.getInputStream();
@@ -94,6 +104,7 @@ public class UploadServlet extends HttpServlet {
                     e.printStackTrace();
 
                 }
+                request.setAttribute("formatError", formatError);
                 request.setAttribute("message",message);
                 request.setAttribute("fileName",fileName);
                 request.getRequestDispatcher("/message.jsp").forward(request, response);
