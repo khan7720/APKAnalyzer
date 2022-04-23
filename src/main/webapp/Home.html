@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="./css/logo.png">
+
+    <title>Android污点分析</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="./css/Home.css" rel="stylesheet">
+
+
+
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation" class="active"><a href="Home.html">主页 <span class="glyphicon glyphicon-home" aria-hidden="true"></span></a></li>
+            <li role="presentation"><a href="/TestProject/FunctionServlet">历史 <span class="glyphicon glyphicon-time" aria-hidden="true"></span></a></li>
+            <li role="presentation"><a href="about.html">关于 <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span></a></li>
+          </ul>
+        </nav>
+       <h3 class="text-muted"><a href="Home.html">Android污点分析</a><img src="./css/logo.png" width="30" height="30"/></h3>
+        
+      </div>
+
+      <div class="jumbotron">
+        <h1>APK在线分析平台</h1>
+        <p class="lead">即刻使用基于静态污点分析技术开发的FlowDroid、FastDroid工具对Android应用进行分析，获取可能潜藏的敏感行为、敏感权限并生成多维度的分析报告</p>
+        <form enctype="multipart/form-data" method="post" action="/TestProject/UploadServlet">
+						<div align="center">
+						<input type="file" name="myfile" class="btn btn-default">
+						</div>
+						<br>
+					    <br>
+					    <input type="submit" value="上传APK文件" class="btn btn-lg btn-success">
+					</form>
+      </div>
+
+      <div class="row marketing">
+        <div class="col-lg-6">
+          <h4>权限信息</h4>
+          <p>Android 将权限分为不同的类型，包括安装时权限、运行时权限和特殊权限。</p>
+
+          <h4>API</h4>
+          <p>Android应用程序编程接口是一些预先定义的可供调用的系统接口，应用程序可借此进行敏感操作。</p>
+
+        </div>
+
+        <div class="col-lg-6">      
+          <h4>污点分析</h4>
+          <p>污点分析是一种信息流分析技术,通过插桩、数据流分析等方法追踪程序中带污点标记的数据的传播以及泄露情况。</p>
+          
+          <h4>污染流</h4>
+          <p>隐私数据从污点源经过污染变量到达泄露点的传播过程形成的数据流。</p>
+
+        </div>
+      </div>
+
+      <footer class="footer">
+        <p>© 2022 Powered by XDU</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+
+</body><div id="edge-translate-notifier-container" class="edge-translate-notifier-center"></div></html>

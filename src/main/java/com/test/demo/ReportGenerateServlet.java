@@ -36,6 +36,9 @@ public class ReportGenerateServlet extends HttpServlet {
 		System.out.println("currentID="+currentID);
 		System.out.println("正在生成"+filename+"的jsp报告");
 		
+		request.setAttribute("filename", filename);
+        request.setAttribute("currentID", currentID);
+		
         
         MyDAO md = new MyDAO();
         apkBean currentAPK = md.get_single_apk_by_id(currentID);
@@ -102,7 +105,7 @@ public class ReportGenerateServlet extends HttpServlet {
         request.setAttribute("codeSizeAverage", md.get_code_avg());
       
         
-        request.getRequestDispatcher("/testReport.jsp").forward(request, response);
+        request.getRequestDispatcher("/SingleReport.jsp").forward(request, response);
    
 
 	}

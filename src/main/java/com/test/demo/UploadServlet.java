@@ -29,6 +29,8 @@ public class UploadServlet extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+    	
+    	
                 String savePath = "D:\\BISHE\\newWorkSpace\\TestProject\\src\\main\\webapp\\WEB-INF\\upload";
                 File file = new File(savePath);
                 //判断上传的保存目录是否存在
@@ -107,7 +109,7 @@ public class UploadServlet extends HttpServlet {
                 request.setAttribute("formatError", formatError);
                 request.setAttribute("message",message);
                 request.setAttribute("fileName",fileName);
-                request.getRequestDispatcher("/message.jsp").forward(request, response);
+                request.getRequestDispatcher("/UploadResult.jsp").forward(request, response);
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response)

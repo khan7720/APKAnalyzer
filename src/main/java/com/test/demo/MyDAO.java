@@ -2,6 +2,7 @@ package com.test.demo;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.List;
 
 public class MyDAO {
 	public ArrayList<apkBean> select_all_apk(){
@@ -761,6 +762,36 @@ public class MyDAO {
 				// TODO Auto-generated catch block
 				System.out.println("读取FastDroidTime min失败");
 				return -1;
+			}
+		}
+
+		public List<apkBean> findPage(int rows, int currentPage) {
+			int index = (currentPage-1)*rows ;
+						
+			ArrayList<apkBean> array = new ArrayList<apkBean>();
+			Connection conn = DBUtil.getConncetion();;
+			PreparedStatement ps = null;
+			ResultSet rst = null;				
+			String sql = "select * from apkinfo order by apkID desc limit ?,? ";			
+			try {
+				ps=conn.prepareStatement(sql);
+				ps.setInt(1, index);
+				ps.setInt(2, rows);				
+				rst = ps.executeQuery();
+				while (rst.next()) {
+					apkBean a = new apkBean();
+					a.setApkName(rst.getString("apkName"));
+					a.setApkID(rst.getInt("apkID"));
+					a.setStartTime(rst.getString("StartTime"));
+					array.add(a);
+				}
+				conn.close();
+				System.out.println("获取"+currentPage+"分页成功");
+				return array;
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				System.out.println("获取"+currentPage+"分页失败");
+				return new ArrayList<apkBean>();
 			}
 		}
 	

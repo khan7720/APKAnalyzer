@@ -90,9 +90,10 @@ public class CoreAnalyzeServlet extends HttpServlet {
         
         
         apkBean currentAPK = ResultExtractor.extractAPKinfo(realName+outfileDate);
-        System.out.println(currentAPK.toString());
         ArrayList<permissionBean> currentplist = ResultExtractor.extractPermission(realName+outfileDate, currentAPK.getApkID());
         ArrayList<apiBean> currentalist = ResultExtractor.extractAPI(realName+outfileDate, currentAPK.getApkID());
+        currentAPK.setAPI(currentalist.size());
+        System.out.println(currentAPK.toString());
         MyDAO md = new MyDAO();
         md.insert_single_apk(currentAPK); 
         for(permissionBean pb:currentplist) {
@@ -109,7 +110,7 @@ public class CoreAnalyzeServlet extends HttpServlet {
         request.setAttribute("currentID", currentAPK.getApkID());
 	    request.setAttribute("message",message);
 	    request.setAttribute("filename",filename);
-		request.getRequestDispatcher("/finish.jsp").forward(request, response);
+		request.getRequestDispatcher("/Result.jsp").forward(request, response);
 	}
 
 	/**

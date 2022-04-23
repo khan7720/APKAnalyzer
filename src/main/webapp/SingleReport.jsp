@@ -11,18 +11,44 @@
 <%  String caller2 = (String)request.getAttribute("SinkCaller");%>
 <%  String permission1 = (String)request.getAttribute("Permission1");%>
 <%  String permission2 = (String)request.getAttribute("Permission2");%>
+<%  int apiSize = alist.size();%>
 <!DOCTYPE html>
-<html style="height: 100%">
-    <head>
-        <meta charset="utf-8">
-    </head>
-    <body style="height: 100%; margin: 0">
-    <script type="text/javascript" src="./echarts.js"></script>
-            
+<html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
-    	<div >
-    		<h1 align="center">分析结果</h1>
-	    	<table align="center" width="760px" border="1px" bordercolor="pink" cellspacing="0" cellpadding="10">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="./css/logo.png">
+
+    <title>分析结果</title>
+
+   <!-- Bootstrap core CSS -->
+    <link href="https://fastly.jsdelivr.net/npm/@bootcss/v3.bootcss.com@1.0.35/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="https://fastly.jsdelivr.net/npm/@bootcss/v3.bootcss.com@1.0.35/examples/grid/grid.css" rel="stylesheet">
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.3.2/dist/echarts.min.js"></script>
+  </head>
+
+  <body onload="checkTF()">
+  
+	  <script type="text/javascript">
+	  	function checkTF(){	if (<%=apiSize%>==0) document.getElementById('container6').remove();     }
+	  </script>
+    <div class="container">
+
+      <div class="page-header" style="display: inline-block;">
+        <h1>分析结果    <span class="label label-success">Report</span></h1>
+        <p class="lead">通过本系统后台分析工具FastDroid所分析生成的多维度报告   <span class="glyphicon glyphicon-check" aria-hidden="true"></span></p>
+      </div>
+      <div style="display: inline-block;margin-left:300px">
+      <a href="/TestProject/DownloadServlet?filename=${filename}&currentID=${currentID}"><input type="button" value="下载报告" class="btn btn-lg btn-primary" style="display: inline-block;"></a>
+      </div>
+
+      <h3>APK基本信息</h3>
+      <p>了解APK的基本信息，包括<strong>代码量、权限、API及污染流</strong>等基础数据。</p>
+	  <table class="table table-striped">
 	    		<tbody>
 		    		<tr>
 		    		 <td>应用名称</td><td>${ApknameToShow}</td>
@@ -65,66 +91,63 @@
 		    		</tr>
 	    		</tbody>
 	    	</table>
-	    	
-	    	<h3 align="center">权限信息</h3>
-	  <div>
-	    <table align="center" width="760px" border="1px" bordercolor="pink" cellspacing="0" cellpadding="10">
+     
+
+      <h3>权限信息</h3>
+      <p>了解该Android应用的权限信息，<strong>可分为安装时权限、运行时权限和特殊权限。</strong>按照风险可划分为低中高三级别。</p>
+      <table class="table table-striped">
 	    	<tr>
-	    		<td width="9.9%" align="center">序号</td>
-			    <td width="57.4%" align="center">权限名称</td>
-			    <td width="32.6%" align="center">权限等级</td>
+	    		<td class="info" width="10%" >序号</td>
+			    <td class="info" width="60%">权限名称</td>
+			    <td class="info" width="30%">权限等级</td>
 	    	</tr>
-	    </table>
-	    <table id="plist" align="center" width="760px" border="1px" bordercolor="pink" cellspacing="0" cellpadding="10"></table>
-    </div>	
-	     <script>
-    var strs='';
-    <% for(int i=0;i<plist.size();i++){
-    	permissionBean pb = plist.get(i);%>
-    	var str='';
-    	str+='<td>'+'<%=i+1%>'+'</td>';
-    	str+='<td>'+'<%=pb.getPname()%>'+'</td>';
-    	str+='<td>'+'<%=pb.getPlevel()%>'+'</td>';
-		strs+='<tr>'+str+'</tr>';
-    <%}%>
-    document.getElementById("plist").innerHTML=strs;
-    </script>
+	  </table>
+      <table id="plist" class="table table-striped"></table>
+	      <script>
+		    var strs='';
+		    <% for(int i=0;i<plist.size();i++){
+		    	permissionBean pb = plist.get(i);%>
+		    	var str='';
+		    	str+='<td>'+'<%=i+1%>'+'</td>';
+		    	str+='<td>'+'<%=pb.getPname()%>'+'</td>';
+		    	str+='<td>'+'<%=pb.getPlevel()%>'+'</td>';
+				strs+='<tr>'+str+'</tr>';
+		    <%}%>
+		    document.getElementById("plist").innerHTML=strs;
+	      </script>
+
+      <h3>API信息</h3>
+      <p>了解该Android应用的API信息，<strong>包括名称、调用函数和处于污染流中的什么位置</strong>。</p>
+	  <table class="table table-striped">
+    	<tr>
+    		<td class="info" width="5%" >序号</td>
+		    <td class="info" width="70%">API名称</td>
+		    <td class="info" width="19%">调用函数</td>
+		    <td class="info" width="6%">TF位置</td>
+    	</tr>
+	  </table>
+      <table id="alist" class="table table-striped"></table>
+      <script>
+	    var strs='';
+	    <% for(int i=0;i<alist.size();i++){
+	    	apiBean ab = alist.get(i);%>
+	    	var str='';
+	    	str+='<td>'+'<%=i+1%>'+'</td>';
+	    	str+='<td>'+'<%=ab.getAname()%>'+'</td>';
+	    	str+='<td>'+'<%=ab.getCaller()%>'+'</td>';
+	    	str+='<td>'+'<%=ab.getRouteType()%>'+'</td>';
+			strs+='<tr>'+str+'</tr>';
+	    <%}%>
+	    document.getElementById("alist").innerHTML=strs;
+      </script>
+           
+      <h3>图表展示<span class="label label-success">Chart</span></h3>
+
+    </div> <!-- /container -->
     
+
     
-    	    	<h3 align="center">API信息</h3>
-	  <div>
-	    <table align="center" width="1325px"  bordercolor="pink" cellspacing="0" cellpadding="10">
-	    	<tr>
-	    		<td width="35px" align="center">序号</td>
-			    <td width="895px" align="center">API名称</td>
-			    <td width="310px" align="center">调用函数</td>
-			    <td width="85px" align="center">污染流位置</td>
-	    	</tr>
-	    </table>
-	    <table id="alist" align="center" width="760px" border="1px" bordercolor="pink" cellspacing="0" cellpadding="10"></table>
-    </div>	
-	     <script>
-    var strs='';
-    <% for(int i=0;i<alist.size();i++){
-    	apiBean ab = alist.get(i);%>
-    	var str='';
-    	str+='<td>'+'<%=i+1%>'+'</td>';
-    	str+='<td>'+'<%=ab.getAname()%>'+'</td>';
-    	str+='<td>'+'<%=ab.getCaller()%>'+'</td>';
-    	str+='<td>'+'<%=ab.getRouteType()%>'+'</td>';
-		strs+='<tr>'+str+'</tr>';
-    <%}%>
-    document.getElementById("alist").innerHTML=strs;
-    </script>
-    
-    <br>
-    <br>
-    <br>
-    <br>
-	    
-	    
-	    
-		</div>
+     
         <div id="container1" style="height: 300px; width:300px; margin:0 auto"></div>
         
         
@@ -319,7 +342,7 @@ var option;
 option = {
  title:{
 	  show:true,
-	  text:'CFG分析时间',
+	  text:'CFG构造时间',
 	  x:'center'
   },
   xAxis: {
@@ -404,7 +427,7 @@ var option;
 
 option = {
   title: {
-    text: '函数调用图',
+    text: '污染流图',
     x:'center'
   },
   tooltip: {},
@@ -431,26 +454,27 @@ option = {
       },
       data: [
         {
+          id:'source',
           name: 'Source',
           symbol: 'circle',
           x: 300,
           y: 700,
           symbolSize: 50,
         },
-        {
+        {id:'sink',
           name: 'Sink',
           symbol: 'circle',
           x: 1000,
           y: -150,
           symbolSize: 50
         },
-        {
+        {id:'api1',
           name:'<%=api1%>',
           x: 400,
           y: 500,
           symbolSize: [150,60]
         },
-        {
+        {id:'permission1',
           name: '<%=permission1%>',
           x: 500,
           y: 700,
@@ -460,7 +484,7 @@ option = {
           borderWidth: 3
           }
         },
-        {
+        {id:'permission2',
           name: '<%=permission2%>',
           x: 800,
           y: -150,
@@ -470,19 +494,19 @@ option = {
           borderWidth: 3
           }
         },
-        {
+        {id:'api2',
           name: '<%=api2%>',
           x: 900,
           y: 50,
           symbolSize: [150,60]
         },
-        {
+        {id:'caller1',
           name: '<%=caller1%>',
           x: 400,
           y: 50,
           symbolSize: [150,60]
         },
-        {
+        {id:'caller2',
           name: '<%=caller2%>',
           x: 900,
           y: 500,
@@ -492,23 +516,23 @@ option = {
       // links: [],
       links: [
         {
-          source: 'Source',
-          target: '<%=api1%>',
+          source: 'source',
+          target: 'api1',
           lineStyle: {
             curveness: 0.2
           }
         },
         {
-          source:'<%=caller2%>',
-          target: '<%=api2%>',
+          source:'caller2',
+          target: 'api2',
         },
         {
-          source: '<%=caller1%>',
-          target: '<%=api1%>',
+          source: 'caller1',
+          target: 'api1',
         },
         {
-          source: '<%=caller1%>',
-          target: '<%=caller2%>',
+          source: 'caller1',
+          target: 'caller2',
           label: {
             show: true
           },
@@ -517,19 +541,19 @@ option = {
           }
         },
          {
-          source: '<%=api2%>',
-          target: 'Sink',
+          source: 'api2',
+          target: 'sink',
           lineStyle: {
             curveness: -0.2
           }
         },
           {
-          source: '<%=permission1%>',
-          target: '<%=api1%>',
+          source: 'permission1',
+          target: 'api1',
         },
           {
-          source: '<%=permission2%>',
-          target: '<%=api2%>',
+          source: 'permission2',
+          target: 'api2',
         }
       ],
       lineStyle: {
@@ -547,5 +571,9 @@ if (option && typeof option === 'object') {
 }
 
         </script>
-    </body>
-</html>
+
+
+    
+  
+
+</body><div id="edge-translate-notifier-container" class="edge-translate-notifier-center"></div></html>

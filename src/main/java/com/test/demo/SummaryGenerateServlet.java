@@ -43,7 +43,7 @@ public class SummaryGenerateServlet extends HttpServlet {
         request.setAttribute("TaintSum",md.get_taint_sum());
         request.setAttribute("MayTaintSum",md.get_maytaint_sum());
         request.setAttribute("PermissionSum",MyDAO.get_permission_count());
-        request.setAttribute("APISum",0);
+        request.setAttribute("APISum",MyDAO.get_api_count());
         
         int currentDangerous = 0, currentSignature = 0, currentNormal = 0, currentOthers = 0;
         for(permissionBean pb: currentPermission) {
@@ -69,7 +69,7 @@ public class SummaryGenerateServlet extends HttpServlet {
         request.setAttribute("FastDroidMin", md.get_FastTime_min());
         
         
-        request.getRequestDispatcher("/summaryReport.jsp").forward(request, response);
+        request.getRequestDispatcher("/SumReport.jsp").forward(request, response);
 		
 	}
 
