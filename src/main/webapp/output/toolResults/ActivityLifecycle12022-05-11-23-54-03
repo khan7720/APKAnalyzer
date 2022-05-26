@@ -1,0 +1,15 @@
+Analyse:  !N<D:\BISHE\newWorkSpace\TestProject\src\main\webapp\WEB-INF\upload\ActivityLifecycle1.apk>N!  !!!!!!!!!!
+Analyse:  !P<D:\BISHE\newWorkSpace\TestProject\src\main\webapp\WEB-INF\upload\ActivityLifecycle1.apk>P!  !!!!!!!!!!
+Permission 1!Per<android.permission.INTERNET>Per!  !!!!!!!!!!
+Permission 2!Per<android.permission.READ_PHONE_STATE>Per!  !!!!!!!!!!
+Totally analysis:10 Classes£¬76 Methods£¬47 Statements
+TaintFlow 1
+Source--->TV [Local,$r4,java.lang.String,de.ecspride.ActivityLifecycle1,void onCreate(android.os.Bundle), SL=SL [de.ecspride.ActivityLifecycle1, void onCreate(android.os.Bundle), No.=7, State=$r4 = virtualinvoke $r3.<android.telephony.TelephonyManager: java.lang.String getDeviceId()>()], TW=Source]
+Sink--->TV [Local,$r1,java.net.URL,de.ecspride.ActivityLifecycle1,void connect(), SL=SL [de.ecspride.ActivityLifecycle1, void connect(), No.=5, State=$r2 = virtualinvoke $r1.<java.net.URL: java.net.URLConnection openConnection()>()], TW=Sink]
+Apk Size is  !K<179>K! KB
+code size is  !S<124>S! lines
+CFG construction has run for !C<2.3020157>C! seconds
+Fastdroid analysis has run for !R<0.0281413>R! seconds
+TaintFlow totally Number is  !T<1>T!
+MayTaintFlow totally Number is  !M<0>M!
+--------------------------FINISH--------------------------------------

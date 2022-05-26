@@ -1,0 +1,15 @@
+Analyse:  !N<D:\BISHE\newWorkSpace\TestProject\src\main\webapp\WEB-INF\upload\FlowSensitivity1.apk>N!  !!!!!!!!!!
+Analyse:  !P<D:\BISHE\newWorkSpace\TestProject\src\main\webapp\WEB-INF\upload\FlowSensitivity1.apk>P!  !!!!!!!!!!
+Permission 1!Per<android.permission.SEND_SMS>Per!  !!!!!!!!!!
+Permission 2!Per<android.permission.READ_PHONE_STATE>Per!  !!!!!!!!!!
+Totally analysis:35 Classes£¬79 Methods£¬73 Statements
+TaintFlow 1
+Source--->TV [Local,$r4,java.lang.String,de.ecspride.MainActivity,void aliasFlowTest(), SL=SL [de.ecspride.MainActivity, void aliasFlowTest(), No.=4, State=$r4 = virtualinvoke $r3.<android.telephony.TelephonyManager: java.lang.String getDeviceId()>()], TW=Source]
+Sink--->TV [Local,$r4,java.lang.String,de.ecspride.MainActivity,void aliasFlowTest(), SL=SL [de.ecspride.MainActivity, void aliasFlowTest(), No.=11, State=virtualinvoke $r5.<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>("+49 1234", null, $r4, null, null)], TW=Sink]
+Apk Size is  !K<811>K! KB
+code size is  !S<145>S! lines
+CFG construction has run for !C<3148.7294957>C! seconds
+Fastdroid analysis has run for !R<0.1183078>R! seconds
+TaintFlow totally Number is  !T<1>T!
+MayTaintFlow totally Number is  !M<0>M!
+--------------------------FINISH--------------------------------------

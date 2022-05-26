@@ -24,11 +24,19 @@
 
     <title>分析结果</title>
 
-   <!-- Bootstrap core CSS -->
+<!--  
     <link href="https://fastly.jsdelivr.net/npm/@bootcss/v3.bootcss.com@1.0.35/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom styles for this template -->
     <link href="https://fastly.jsdelivr.net/npm/@bootcss/v3.bootcss.com@1.0.35/examples/grid/grid.css" rel="stylesheet">
-	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.3.2/dist/echarts.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.3.2/dist/echarts.min.js"></script> 
+-->	
+	 
+	
+	 <link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="./css/grid.css" rel="stylesheet">
+
+	<script type="text/javascript" src="./echarts.js"></script>
+	
   </head>
 
   <body onload="checkTF()">

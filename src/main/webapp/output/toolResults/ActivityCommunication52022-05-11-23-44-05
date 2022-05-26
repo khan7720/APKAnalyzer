@@ -1,0 +1,20 @@
+Analyse:  !N<D:\BISHE\newWorkSpace\TestProject\src\main\webapp\WEB-INF\upload\ActivityCommunication5.apk>N!  !!!!!!!!!!
+Analyse:  !P<D:\BISHE\newWorkSpace\TestProject\src\main\webapp\WEB-INF\upload\ActivityCommunication5.apk>P!  !!!!!!!!!!
+Permission 1!Per<android.permission.READ_PHONE_STATE>Per!  !!!!!!!!!!
+Totally analysis:14 Classes£¬77 Methods£¬73 Statements
+TaintFlow 1
+Source--->TV [Local,$r6,java.lang.String,edu.mit.icc_intent_component_name.OutFlowActivity,void onCreate(android.os.Bundle), SL=SL [edu.mit.icc_intent_component_name.OutFlowActivity, void onCreate(android.os.Bundle), No.=7, State=$r6 = virtualinvoke $r5.<android.telephony.TelephonyManager: java.lang.String getDeviceId()>()], TW=Source]
+Sink--->TV [Local,$r3,android.content.Intent,edu.mit.icc_intent_component_name.OutFlowActivity,void onCreate(android.os.Bundle), SL=SL [edu.mit.icc_intent_component_name.OutFlowActivity, void onCreate(android.os.Bundle), No.=14, State=virtualinvoke $r0.<edu.mit.icc_intent_component_name.OutFlowActivity: void startActivity(android.content.Intent)>($r3)], TW=Sink]
+TaintFlow 2
+Source--->TV [Local,$r2,android.content.Intent,edu.mit.icc_intent_component_name.IsolateActivity,void onCreate(android.os.Bundle), SL=SL [edu.mit.icc_intent_component_name.IsolateActivity, void onCreate(android.os.Bundle), No.=4, State=$r2 = virtualinvoke $r0.<edu.mit.icc_intent_component_name.IsolateActivity: android.content.Intent getIntent()>()], TW=Source]
+Sink--->TV [Local,$r3,java.lang.String,edu.mit.icc_intent_component_name.IsolateActivity,void onCreate(android.os.Bundle), SL=SL [edu.mit.icc_intent_component_name.IsolateActivity, void onCreate(android.os.Bundle), No.=6, State=staticinvoke <android.util.Log: int i(java.lang.String,java.lang.String)>("DroidBench", $r3)], TW=Sink]
+TaintFlow 3
+Source--->TV [Local,$r2,android.content.Intent,edu.mit.icc_intent_component_name.InFlowActivity,void onCreate(android.os.Bundle), SL=SL [edu.mit.icc_intent_component_name.InFlowActivity, void onCreate(android.os.Bundle), No.=5, State=$r2 = virtualinvoke $r0.<edu.mit.icc_intent_component_name.InFlowActivity: android.content.Intent getIntent()>()], TW=Source]
+Sink--->TV [Local,$r3,java.lang.String,edu.mit.icc_intent_component_name.InFlowActivity,void onCreate(android.os.Bundle), SL=SL [edu.mit.icc_intent_component_name.InFlowActivity, void onCreate(android.os.Bundle), No.=7, State=staticinvoke <android.util.Log: int i(java.lang.String,java.lang.String)>("DroidBench", $r3)], TW=Sink]
+Apk Size is  !K<280>K! KB
+code size is  !S<121>S! lines
+CFG construction has run for !C<2.3173936>C! seconds
+Fastdroid analysis has run for !R<0.0303631>R! seconds
+TaintFlow totally Number is  !T<3>T!
+MayTaintFlow totally Number is  !M<0>M!
+--------------------------FINISH--------------------------------------

@@ -158,7 +158,7 @@ public static ArrayList<apiBean> extractAPI(String fileToCope, int apkid) {
 				apiBean ab = new apiBean();
 				ab.setAid(MyDAO.get_api_count()+alist.size()+1);
 				ab.setApkid(apkid);
-				ab.setAname(line.substring(line.indexOf("<")+1,line.indexOf(">()]")));
+				ab.setAname(line.substring(line.indexOf("<")+1,line.indexOf(")>(")+1));
 				ab.setCaller(line.substring(line.indexOf("SL [")+4,line.indexOf(", No.")));
 				ab.setRouteType("Source");
 				alist.add(ab);

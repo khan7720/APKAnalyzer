@@ -1,0 +1,14 @@
+Analyse:  !N<D:\BISHE\newWorkSpace\TestProject\src\main\webapp\WEB-INF\upload\IntentSink2.apk>N!  !!!!!!!!!!
+Analyse:  !P<D:\BISHE\newWorkSpace\TestProject\src\main\webapp\WEB-INF\upload\IntentSink2.apk>P!  !!!!!!!!!!
+Permission 1!Per<android.permission.READ_PHONE_STATE>Per!  !!!!!!!!!!
+Totally analysis:16 Classes£¬74 Methods£¬41 Statements
+TaintFlow 1
+Source--->TV [Local,$r6,java.lang.String,de.ecspride.IntentSink2,void startIntent(android.view.View), SL=SL [de.ecspride.IntentSink2, void startIntent(android.view.View), No.=7, State=$r6 = virtualinvoke $r5.<android.telephony.TelephonyManager: java.lang.String getDeviceId()>()], TW=Source]
+Sink--->TV [Local,$r2,android.content.Intent,de.ecspride.IntentSink2,void startIntent(android.view.View), SL=SL [de.ecspride.IntentSink2, void startIntent(android.view.View), No.=14, State=virtualinvoke $r0.<de.ecspride.IntentSink2: void startActivity(android.content.Intent)>($r2)], TW=Sink]
+Apk Size is  !K<179>K! KB
+code size is  !S<89>S! lines
+CFG construction has run for !C<2.1619033>C! seconds
+Fastdroid analysis has run for !R<0.0277435>R! seconds
+TaintFlow totally Number is  !T<1>T!
+MayTaintFlow totally Number is  !M<0>M!
+--------------------------FINISH--------------------------------------

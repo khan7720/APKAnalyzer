@@ -1,0 +1,21 @@
+Analyse:  !N<D:\BISHE\newWorkSpace\TestProject\src\main\webapp\WEB-INF\upload\SendSMS.apk>N!  !!!!!!!!!!
+Analyse:  !P<D:\BISHE\newWorkSpace\TestProject\src\main\webapp\WEB-INF\upload\SendSMS.apk>P!  !!!!!!!!!!
+Permission 1!Per<android.permission.SEND_SMS>Per!  !!!!!!!!!!
+Permission 2!Per<android.permission.READ_PHONE_STATE>Per!  !!!!!!!!!!
+Totally analysis:15 Classes£¬78 Methods£¬101 Statements
+TaintFlow 1
+Source--->TV [Local,$r3,java.lang.String,org.cert.sendsms.MainActivity,void onActivityResult(int,int,android.content.Intent), SL=SL [org.cert.sendsms.MainActivity, void onActivityResult(int,int,android.content.Intent), No.=15, State=$r3 = virtualinvoke $r2.<android.os.Bundle: java.lang.String getString(java.lang.String)>("secret")], TW=Source]
+Sink--->TV [Local,$r1,java.lang.String,org.cert.sendsms.MainActivity,void sendSMSMessage(java.lang.String), SL=SL [org.cert.sendsms.MainActivity, void sendSMSMessage(java.lang.String), No.=4, State=virtualinvoke $r3.<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>("1234567890", null, $r1, null, null)], TW=Sink]
+TaintFlow 2
+Source--->TV [Local,$r6,java.lang.String,org.cert.sendsms.Button1Listener,void onClick(android.view.View), SL=SL [org.cert.sendsms.Button1Listener, void onClick(android.view.View), No.=9, State=$r6 = virtualinvoke $r5.<android.telephony.TelephonyManager: java.lang.String getDeviceId()>()], TW=Source]
+Sink--->TV [Local,$r2,android.content.Intent,org.cert.sendsms.Button1Listener,void onClick(android.view.View), SL=SL [org.cert.sendsms.Button1Listener, void onClick(android.view.View), No.=17, State=virtualinvoke $r3.<org.cert.sendsms.MainActivity: void startActivityForResult(android.content.Intent,int)>($r2, 0)], TW=Sink]
+TaintFlow 3
+Source--->TV [Local,$r6,java.lang.String,org.cert.sendsms.Button1Listener,void onClick(android.view.View), SL=SL [org.cert.sendsms.Button1Listener, void onClick(android.view.View), No.=9, State=$r6 = virtualinvoke $r5.<android.telephony.TelephonyManager: java.lang.String getDeviceId()>()], TW=Source]
+Sink--->TV [Local,$r6,java.lang.String,org.cert.sendsms.Button1Listener,void onClick(android.view.View), SL=SL [org.cert.sendsms.Button1Listener, void onClick(android.view.View), No.=15, State=staticinvoke <android.util.Log: int i(java.lang.String,java.lang.String)>("SendSMS: ", $r6)], TW=Sink]
+Apk Size is  !K<254>K! KB
+code size is  !S<177>S! lines
+CFG construction has run for !C<2.2612627>C! seconds
+Fastdroid analysis has run for !R<0.039928>R! seconds
+TaintFlow totally Number is  !T<3>T!
+MayTaintFlow totally Number is  !M<1>M!
+--------------------------FINISH--------------------------------------

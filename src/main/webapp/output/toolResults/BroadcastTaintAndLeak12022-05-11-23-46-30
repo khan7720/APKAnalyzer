@@ -1,0 +1,11 @@
+Analyse:  !N<D:\BISHE\newWorkSpace\TestProject\src\main\webapp\WEB-INF\upload\BroadcastTaintAndLeak1.apk>N!  !!!!!!!!!!
+Analyse:  !P<D:\BISHE\newWorkSpace\TestProject\src\main\webapp\WEB-INF\upload\BroadcastTaintAndLeak1.apk>P!  !!!!!!!!!!
+Permission 1!Per<android.permission.READ_PHONE_STATE>Per!  !!!!!!!!!!
+Totally analysis:16 Classes£¬77 Methods£¬60 Statements
+Apk Size is  !K<16>K! KB
+code size is  !S<108>S! lines
+CFG construction has run for !C<1.9667228>C! seconds
+Fastdroid analysis has run for !R<0.0177888>R! seconds
+TaintFlow totally Number is  !T<0>T!
+MayTaintFlow totally Number is  !M<0>M!
+--------------------------FINISH--------------------------------------

@@ -1,0 +1,22 @@
+Analyse:  !N<D:\BISHE\newWorkSpace\TestProject\src\main\webapp\WEB-INF\upload\ActivityEventSequence3.apk>N!  !!!!!!!!!!
+Analyse:  !P<D:\BISHE\newWorkSpace\TestProject\src\main\webapp\WEB-INF\upload\ActivityEventSequence3.apk>P!  !!!!!!!!!!
+Permission 1!Per<android.permission.SEND_SMS>Per!  !!!!!!!!!!
+Permission 2!Per<android.permission.WRITE_EXTERNAL_STORAGE>Per!  !!!!!!!!!!
+Permission 3!Per<android.permission.READ_PHONE_STATE>Per!  !!!!!!!!!!
+Totally analysis:16 Classes£¬77 Methods£¬73 Statements
+TaintFlow 1
+Source--->TV [Local,$r2,java.lang.String,edu.uta.ActivityEventSequence3,void onRestoreInstanceState(android.os.Bundle), SL=SL [edu.uta.ActivityEventSequence3, void onRestoreInstanceState(android.os.Bundle), No.=3, State=$r2 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("myData")], TW=Source]
+Sink--->TV [Local,$r1,java.lang.String,edu.uta.ActivityEventSequence3,void onResume(), SL=SL [edu.uta.ActivityEventSequence3, void onResume(), No.=15, State=virtualinvoke $r4.<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>($r5, null, $r1, null, null)], TW=Sink]
+TaintFlow 2
+Source--->TV [Local,$r1,java.lang.String,edu.uta.ActivityEventSequence3,void onUserLeaveHint(), SL=SL [edu.uta.ActivityEventSequence3, void onUserLeaveHint(), No.=7, State=$r1 = virtualinvoke $r4.<android.telephony.TelephonyManager: java.lang.String getDeviceId()>()], TW=Source]
+Sink--->TV [Local,$r2,java.lang.String,edu.uta.ActivityEventSequence3,void onSaveInstanceState(android.os.Bundle), SL=SL [edu.uta.ActivityEventSequence3, void onSaveInstanceState(android.os.Bundle), No.=4, State=virtualinvoke $r1.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("myData", $r2)], TW=Sink]
+TaintFlow 3
+Source--->TV [Local,$r1,java.lang.String,edu.uta.ActivityEventSequence3,void onUserLeaveHint(), SL=SL [edu.uta.ActivityEventSequence3, void onUserLeaveHint(), No.=7, State=$r1 = virtualinvoke $r4.<android.telephony.TelephonyManager: java.lang.String getDeviceId()>()], TW=Source]
+Sink--->TV [Local,$r1,android.os.Bundle,edu.uta.ActivityEventSequence3,void onSaveInstanceState(android.os.Bundle), SL=SL [edu.uta.ActivityEventSequence3, void onSaveInstanceState(android.os.Bundle), No.=4, State=virtualinvoke $r1.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("myData", $r2)], TW=Sink]
+Apk Size is  !K<197>K! KB
+code size is  !S<150>S! lines
+CFG construction has run for !C<2.2484298>C! seconds
+Fastdroid analysis has run for !R<0.0528487>R! seconds
+TaintFlow totally Number is  !T<3>T!
+MayTaintFlow totally Number is  !M<0>M!
+--------------------------FINISH--------------------------------------

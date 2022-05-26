@@ -1,0 +1,11 @@
+Analyse:  !N<D:\BISHE\newWorkSpace\TestProject\src\main\webapp\WEB-INF\upload\Singletons1.apk>N!  !!!!!!!!!!
+Analyse:  !P<D:\BISHE\newWorkSpace\TestProject\src\main\webapp\WEB-INF\upload\Singletons1.apk>P!  !!!!!!!!!!
+Permission 1!Per<android.permission.READ_PHONE_STATE>Per!  !!!!!!!!!!
+Totally analysis:14 Classes£¬78 Methods£¬63 Statements
+Apk Size is  !K<37>K! KB
+code size is  !S<135>S! lines
+CFG construction has run for !C<1.8364358>C! seconds
+Fastdroid analysis has run for !R<0.0225973>R! seconds
+TaintFlow totally Number is  !T<0>T!
+MayTaintFlow totally Number is  !M<0>M!
+--------------------------FINISH--------------------------------------

@@ -1,0 +1,15 @@
+Analyse:  !N<D:\BISHE\newWorkSpace\TestProject\src\main\webapp\WEB-INF\upload\Build1.apk>N!  !!!!!!!!!!
+Analyse:  !P<D:\BISHE\newWorkSpace\TestProject\src\main\webapp\WEB-INF\upload\Build1.apk>P!  !!!!!!!!!!
+Permission 1!Per<android.permission.SEND_SMS>Per!  !!!!!!!!!!
+Permission 2!Per<android.permission.READ_PHONE_STATE>Per!  !!!!!!!!!!
+Totally analysis:33 Classes£¬74 Methods£¬72 Statements
+TaintFlow 1
+Source--->TV [Local,$r2,java.lang.String,com.example.newedtester.MainActivity,void onCreate(android.os.Bundle), SL=SL [com.example.newedtester.MainActivity, void onCreate(android.os.Bundle), No.=42, State=$r2 = virtualinvoke $r15.<android.telephony.TelephonyManager: java.lang.String getDeviceId()>()], TW=Source]
+Sink--->TV [Local,$r2,java.lang.String,com.example.newedtester.MainActivity,void onCreate(android.os.Bundle), SL=SL [com.example.newedtester.MainActivity, void onCreate(android.os.Bundle), No.=44, State=virtualinvoke $r16.<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>("+49 1234", null, $r2, null, null)], TW=Sink]
+Apk Size is  !K<843>K! KB
+code size is  !S<149>S! lines
+CFG construction has run for !C<566.6957745>C! seconds
+Fastdroid analysis has run for !R<0.0436504>R! seconds
+TaintFlow totally Number is  !T<1>T!
+MayTaintFlow totally Number is  !M<0>M!
+--------------------------FINISH--------------------------------------

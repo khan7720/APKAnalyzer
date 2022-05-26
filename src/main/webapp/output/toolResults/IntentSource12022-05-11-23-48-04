@@ -1,0 +1,17 @@
+Analyse:  !N<D:\BISHE\newWorkSpace\TestProject\src\main\webapp\WEB-INF\upload\IntentSource1.apk>N!  !!!!!!!!!!
+Analyse:  !P<D:\BISHE\newWorkSpace\TestProject\src\main\webapp\WEB-INF\upload\IntentSource1.apk>P!  !!!!!!!!!!
+Permission 1!Per<android.permission.READ_PHONE_STATE>Per!  !!!!!!!!!!
+Totally analysis:12 Classes£¬74 Methods£¬50 Statements
+TaintFlow 1
+Source--->TV [Local,$r5,java.lang.Object,lu.uni.snt.serval.IntentSource1,void onActivityResult(int,int,android.content.Intent), SL=SL [lu.uni.snt.serval.IntentSource1, void onActivityResult(int,int,android.content.Intent), No.=16, State=$r5 = virtualinvoke $r2.<android.os.Bundle: java.lang.Object get(java.lang.String)>($r6)], TW=Source]
+Sink--->TV [Local,$r6,java.lang.String,lu.uni.snt.serval.IntentSource1,void onActivityResult(int,int,android.content.Intent), SL=SL [lu.uni.snt.serval.IntentSource1, void onActivityResult(int,int,android.content.Intent), No.=19, State=staticinvoke <android.util.Log: int i(java.lang.String,java.lang.String)>("SnT", $r6)], TW=Sink]
+TaintFlow 2
+Source--->TV [Local,$r2,android.content.Intent,lu.uni.snt.serval.IntentSource1,void onCreate(android.os.Bundle), SL=SL [lu.uni.snt.serval.IntentSource1, void onCreate(android.os.Bundle), No.=5, State=$r2 = virtualinvoke $r0.<lu.uni.snt.serval.IntentSource1: android.content.Intent getIntent()>()], TW=Source]
+Sink--->TV [Local,$r2,android.content.Intent,lu.uni.snt.serval.IntentSource1,void onCreate(android.os.Bundle), SL=SL [lu.uni.snt.serval.IntentSource1, void onCreate(android.os.Bundle), No.=7, State=virtualinvoke $r0.<lu.uni.snt.serval.IntentSource1: void startActivityForResult(android.content.Intent,int)>($r2, 1)], TW=Sink]
+Apk Size is  !K<280>K! KB
+code size is  !S<98>S! lines
+CFG construction has run for !C<2.229142>C! seconds
+Fastdroid analysis has run for !R<0.0199346>R! seconds
+TaintFlow totally Number is  !T<2>T!
+MayTaintFlow totally Number is  !M<0>M!
+--------------------------FINISH--------------------------------------

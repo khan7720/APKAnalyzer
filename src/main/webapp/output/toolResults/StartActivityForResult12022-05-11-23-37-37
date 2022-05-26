@@ -1,0 +1,29 @@
+Analyse:  !N<D:\BISHE\newWorkSpace\TestProject\src\main\webapp\WEB-INF\upload\StartActivityForResult1.apk>N!  !!!!!!!!!!
+Analyse:  !P<D:\BISHE\newWorkSpace\TestProject\src\main\webapp\WEB-INF\upload\StartActivityForResult1.apk>P!  !!!!!!!!!!
+Permission 1!Per<android.permission.ACCESS_FINE_LOCATION>Per!  !!!!!!!!!!
+Totally analysis:15 Classes£¬78 Methods£¬109 Statements
+TaintFlow 1
+Source--->TV [Local,$r4,java.lang.String,org.cert.WriteFile.MainActivity,void onActivityResult(int,int,android.content.Intent), SL=SL [org.cert.WriteFile.MainActivity, void onActivityResult(int,int,android.content.Intent), No.=14, State=$r4 = virtualinvoke $r3.<android.os.Bundle: java.lang.String getString(java.lang.String)>("secret")], TW=Source]
+Sink--->TV [Local,$r4,java.lang.String,org.cert.WriteFile.MainActivity,void onActivityResult(int,int,android.content.Intent), SL=SL [org.cert.WriteFile.MainActivity, void onActivityResult(int,int,android.content.Intent), No.=19, State=staticinvoke <android.util.Log: int i(java.lang.String,java.lang.String)>("sinkFile.txt", $r4)], TW=Sink]
+TaintFlow 2
+Source--->TV [Local,$r4,java.lang.String,org.cert.WriteFile.MainActivity,void onActivityResult(int,int,android.content.Intent), SL=SL [org.cert.WriteFile.MainActivity, void onActivityResult(int,int,android.content.Intent), No.=14, State=$r4 = virtualinvoke $r3.<android.os.Bundle: java.lang.String getString(java.lang.String)>("secret")], TW=Source]
+Sink--->TV [Local,$r6,byte[],org.cert.WriteFile.MainActivity,void onActivityResult(int,int,android.content.Intent), SL=SL [org.cert.WriteFile.MainActivity, void onActivityResult(int,int,android.content.Intent), No.=17, State=virtualinvoke $r5.<java.io.FileOutputStream: void write(byte[])>($r6)], TW=Sink]
+TaintFlow 3
+Source--->TV [Local,$d0,double,org.cert.WriteFile.Button1Listener,java.lang.String getMyLocation(), SL=SL [org.cert.WriteFile.Button1Listener, java.lang.String getMyLocation(), No.=6, State=$d0 = virtualinvoke $r5.<android.location.Location: double getLongitude()>()], TW=Source]
+Sink--->TV [Local,$r2,android.content.Intent,org.cert.WriteFile.Button1Listener,void onClick(android.view.View), SL=SL [org.cert.WriteFile.Button1Listener, void onClick(android.view.View), No.=14, State=virtualinvoke $r5.<org.cert.WriteFile.MainActivity: void startActivityForResult(android.content.Intent,int)>($r2, 0)], TW=Sink]
+TaintFlow 4
+Source--->TV [Local,$d0,double,org.cert.WriteFile.Button1Listener,java.lang.String getMyLocation(), SL=SL [org.cert.WriteFile.Button1Listener, java.lang.String getMyLocation(), No.=6, State=$d0 = virtualinvoke $r5.<android.location.Location: double getLongitude()>()], TW=Source]
+Sink--->TV [Local,$r3,java.lang.String,org.cert.WriteFile.Button1Listener,void onClick(android.view.View), SL=SL [org.cert.WriteFile.Button1Listener, void onClick(android.view.View), No.=12, State=staticinvoke <android.util.Log: int i(java.lang.String,java.lang.String)>("Phase2_3: ", $r3)], TW=Sink]
+TaintFlow 5
+Source--->TV [Local,$d1,double,org.cert.WriteFile.Button1Listener,java.lang.String getMyLocation(), SL=SL [org.cert.WriteFile.Button1Listener, java.lang.String getMyLocation(), No.=7, State=$d1 = virtualinvoke $r5.<android.location.Location: double getLatitude()>()], TW=Source]
+Sink--->TV [Local,$r2,android.content.Intent,org.cert.WriteFile.Button1Listener,void onClick(android.view.View), SL=SL [org.cert.WriteFile.Button1Listener, void onClick(android.view.View), No.=14, State=virtualinvoke $r5.<org.cert.WriteFile.MainActivity: void startActivityForResult(android.content.Intent,int)>($r2, 0)], TW=Sink]
+TaintFlow 6
+Source--->TV [Local,$d1,double,org.cert.WriteFile.Button1Listener,java.lang.String getMyLocation(), SL=SL [org.cert.WriteFile.Button1Listener, java.lang.String getMyLocation(), No.=7, State=$d1 = virtualinvoke $r5.<android.location.Location: double getLatitude()>()], TW=Source]
+Sink--->TV [Local,$r3,java.lang.String,org.cert.WriteFile.Button1Listener,void onClick(android.view.View), SL=SL [org.cert.WriteFile.Button1Listener, void onClick(android.view.View), No.=12, State=staticinvoke <android.util.Log: int i(java.lang.String,java.lang.String)>("Phase2_3: ", $r3)], TW=Sink]
+Apk Size is  !K<255>K! KB
+code size is  !S<191>S! lines
+CFG construction has run for !C<2.293143>C! seconds
+Fastdroid analysis has run for !R<0.0508907>R! seconds
+TaintFlow totally Number is  !T<6>T!
+MayTaintFlow totally Number is  !M<1>M!
+--------------------------FINISH--------------------------------------

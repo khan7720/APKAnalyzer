@@ -1,0 +1,17 @@
+Analyse:  !N<D:\BISHE\newWorkSpace\TestProject\src\main\webapp\WEB-INF\upload\EventOrdering1.apk>N!  !!!!!!!!!!
+Analyse:  !P<D:\BISHE\newWorkSpace\TestProject\src\main\webapp\WEB-INF\upload\EventOrdering1.apk>P!  !!!!!!!!!!
+Permission 1!Per<android.permission.READ_PHONE_STATE>Per!  !!!!!!!!!!
+Totally analysis:14 Classes£¬78 Methods£¬76 Statements
+TaintFlow 1
+Source--->TV [Local,$r2,android.content.Intent,edu.mit.icc_event_ordering.IsolateActivity,void onCreate(android.os.Bundle), SL=SL [edu.mit.icc_event_ordering.IsolateActivity, void onCreate(android.os.Bundle), No.=4, State=$r2 = virtualinvoke $r0.<edu.mit.icc_event_ordering.IsolateActivity: android.content.Intent getIntent()>()], TW=Source]
+Sink--->TV [Local,$r3,java.lang.String,edu.mit.icc_event_ordering.IsolateActivity,void onCreate(android.os.Bundle), SL=SL [edu.mit.icc_event_ordering.IsolateActivity, void onCreate(android.os.Bundle), No.=6, State=staticinvoke <android.util.Log: int i(java.lang.String,java.lang.String)>("DroidBench", $r3)], TW=Sink]
+TaintFlow 2
+Source--->TV [Local,$r3,java.lang.String,edu.mit.icc_event_ordering.InFlowActivity,void writePreferences(), SL=SL [edu.mit.icc_event_ordering.InFlowActivity, void writePreferences(), No.=4, State=$r3 = virtualinvoke $r2.<android.telephony.TelephonyManager: java.lang.String getDeviceId()>()], TW=Source]
+Sink--->TV [Local,$r3,java.lang.String,edu.mit.icc_event_ordering.InFlowActivity,void writePreferences(), SL=SL [edu.mit.icc_event_ordering.InFlowActivity, void writePreferences(), No.=7, State=interfaceinvoke $r5.<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putString(java.lang.String,java.lang.String)>("imei", $r3)], TW=Sink]
+Apk Size is  !K<280>K! KB
+code size is  !S<124>S! lines
+CFG construction has run for !C<2.3459484>C! seconds
+Fastdroid analysis has run for !R<0.0299573>R! seconds
+TaintFlow totally Number is  !T<2>T!
+MayTaintFlow totally Number is  !M<0>M!
+--------------------------FINISH--------------------------------------

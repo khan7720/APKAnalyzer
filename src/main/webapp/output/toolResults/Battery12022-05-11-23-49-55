@@ -1,0 +1,14 @@
+Analyse:  !N<D:\BISHE\newWorkSpace\TestProject\src\main\webapp\WEB-INF\upload\Battery1.apk>N!  !!!!!!!!!!
+Analyse:  !P<D:\BISHE\newWorkSpace\TestProject\src\main\webapp\WEB-INF\upload\Battery1.apk>P!  !!!!!!!!!!
+Permission 1!Per<android.permission.READ_PHONE_STATE>Per!  !!!!!!!!!!
+Totally analysis:34 Classes£¬77 Methods£¬83 Statements
+TaintFlow 1
+Source--->TV [Local,$r7,java.lang.String,com.example.newedtester.MainActivity$1,void onReceive(android.content.Context,android.content.Intent), SL=SL [com.example.newedtester.MainActivity$1, void onReceive(android.content.Context,android.content.Intent), No.=21, State=$r7 = virtualinvoke $r6.<android.telephony.TelephonyManager: java.lang.String getDeviceId()>()], TW=Source]
+Sink--->TV [Local,$r7,java.lang.String,com.example.newedtester.MainActivity$1,void onReceive(android.content.Context,android.content.Intent), SL=SL [com.example.newedtester.MainActivity$1, void onReceive(android.content.Context,android.content.Intent), No.=23, State=virtualinvoke $r8.<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>("+49 1234", null, $r7, null, null)], TW=Sink]
+Apk Size is  !K<843>K! KB
+code size is  !S<131>S! lines
+CFG construction has run for !C<614.613087>C! seconds
+Fastdroid analysis has run for !R<0.0620595>R! seconds
+TaintFlow totally Number is  !T<1>T!
+MayTaintFlow totally Number is  !M<0>M!
+--------------------------FINISH--------------------------------------

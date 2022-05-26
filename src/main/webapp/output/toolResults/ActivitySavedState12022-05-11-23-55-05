@@ -1,0 +1,20 @@
+Analyse:  !N<D:\BISHE\newWorkSpace\TestProject\src\main\webapp\WEB-INF\upload\ActivitySavedState1.apk>N!  !!!!!!!!!!
+Analyse:  !P<D:\BISHE\newWorkSpace\TestProject\src\main\webapp\WEB-INF\upload\ActivitySavedState1.apk>P!  !!!!!!!!!!
+Permission 1!Per<android.permission.READ_PHONE_STATE>Per!  !!!!!!!!!!
+Totally analysis:12 Classes£¬74 Methods£¬34 Statements
+TaintFlow 1
+Source--->TV [Local,$r2,java.lang.String,edu.mit.activity_saved_state.MainActivity,void onCreate(android.os.Bundle), SL=SL [edu.mit.activity_saved_state.MainActivity, void onCreate(android.os.Bundle), No.=6, State=$r2 = virtualinvoke $r1.<android.os.Bundle: java.lang.String getString(java.lang.String)>("DroidBench")], TW=Source]
+Sink--->TV [Local,$r2,java.lang.String,edu.mit.activity_saved_state.MainActivity,void onCreate(android.os.Bundle), SL=SL [edu.mit.activity_saved_state.MainActivity, void onCreate(android.os.Bundle), No.=7, State=staticinvoke <android.util.Log: int i(java.lang.String,java.lang.String)>("DroidBench", $r2)], TW=Sink]
+TaintFlow 2
+Source--->TV [Local,$r4,java.lang.String,edu.mit.activity_saved_state.MainActivity,void onSaveInstanceState(android.os.Bundle), SL=SL [edu.mit.activity_saved_state.MainActivity, void onSaveInstanceState(android.os.Bundle), No.=5, State=$r4 = virtualinvoke $r3.<android.telephony.TelephonyManager: java.lang.String getDeviceId()>()], TW=Source]
+Sink--->TV [Local,$r4,java.lang.String,edu.mit.activity_saved_state.MainActivity,void onSaveInstanceState(android.os.Bundle), SL=SL [edu.mit.activity_saved_state.MainActivity, void onSaveInstanceState(android.os.Bundle), No.=6, State=virtualinvoke $r1.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("DroidBench", $r4)], TW=Sink]
+TaintFlow 3
+Source--->TV [Local,$r4,java.lang.String,edu.mit.activity_saved_state.MainActivity,void onSaveInstanceState(android.os.Bundle), SL=SL [edu.mit.activity_saved_state.MainActivity, void onSaveInstanceState(android.os.Bundle), No.=5, State=$r4 = virtualinvoke $r3.<android.telephony.TelephonyManager: java.lang.String getDeviceId()>()], TW=Source]
+Sink--->TV [Local,$r1,android.os.Bundle,edu.mit.activity_saved_state.MainActivity,void onSaveInstanceState(android.os.Bundle), SL=SL [edu.mit.activity_saved_state.MainActivity, void onSaveInstanceState(android.os.Bundle), No.=6, State=virtualinvoke $r1.<android.os.Bundle: void putString(java.lang.String,java.lang.String)>("DroidBench", $r4)], TW=Sink]
+Apk Size is  !K<36>K! KB
+code size is  !S<82>S! lines
+CFG construction has run for !C<1.7821874>C! seconds
+Fastdroid analysis has run for !R<0.0227942>R! seconds
+TaintFlow totally Number is  !T<3>T!
+MayTaintFlow totally Number is  !M<0>M!
+--------------------------FINISH--------------------------------------

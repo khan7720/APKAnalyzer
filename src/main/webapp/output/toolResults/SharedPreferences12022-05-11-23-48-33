@@ -1,0 +1,14 @@
+Analyse:  !N<D:\BISHE\newWorkSpace\TestProject\src\main\webapp\WEB-INF\upload\SharedPreferences1.apk>N!  !!!!!!!!!!
+Analyse:  !P<D:\BISHE\newWorkSpace\TestProject\src\main\webapp\WEB-INF\upload\SharedPreferences1.apk>P!  !!!!!!!!!!
+Permission 1!Per<android.permission.READ_PHONE_STATE>Per!  !!!!!!!!!!
+Totally analysis:13 Classes£¬75 Methods£¬50 Statements
+TaintFlow 1
+Source--->TV [Local,$r4,java.lang.String,edu.mit.shared_preferences.MainActivity,void onCreate(android.os.Bundle), SL=SL [edu.mit.shared_preferences.MainActivity, void onCreate(android.os.Bundle), No.=7, State=$r4 = virtualinvoke $r3.<android.telephony.TelephonyManager: java.lang.String getDeviceId()>()], TW=Source]
+Sink--->TV [Local,$r4,java.lang.String,edu.mit.shared_preferences.MainActivity,void onCreate(android.os.Bundle), SL=SL [edu.mit.shared_preferences.MainActivity, void onCreate(android.os.Bundle), No.=10, State=interfaceinvoke $r6.<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putString(java.lang.String,java.lang.String)>("imei", $r4)], TW=Sink]
+Apk Size is  !K<36>K! KB
+code size is  !S<98>S! lines
+CFG construction has run for !C<1.7467702>C! seconds
+Fastdroid analysis has run for !R<0.0267314>R! seconds
+TaintFlow totally Number is  !T<1>T!
+MayTaintFlow totally Number is  !M<0>M!
+--------------------------FINISH--------------------------------------
